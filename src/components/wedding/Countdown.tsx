@@ -44,7 +44,7 @@ const Countdown = () => {
       >
         <p className="text-xs tracking-[0.4em] uppercase text-gold mb-3">Counting the moments</p>
         <h2 className="font-script text-5xl md:text-6xl text-foreground/85 mb-10">
-          Until we say "I do"
+          Until we tie the knot
         </h2>
 
         {time ? (
