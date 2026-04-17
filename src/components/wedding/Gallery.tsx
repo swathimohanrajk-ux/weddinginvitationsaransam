@@ -9,14 +9,18 @@ import g8 from "@/assets/couple-8.jpg";
 import g9 from "@/assets/couple-9.jpg";
 import g10 from "@/assets/couple-10.jpg";
 import g11 from "@/assets/couple-11.jpg";
+import g12 from "@/assets/couple-12.jpg";
+import g13 from "@/assets/couple-13.jpg";
 
 const photos = [
   { src: g1, alt: "Saran and Sammyuktha during haldi ceremony" },
   { src: g7, alt: "Saran and Sammyuktha at engagement backdrop" },
+  { src: g13, alt: "Saran and Sammyuktha during haldi ring exchange" },
   { src: g3, alt: "Saran and Sammyuktha greeting with folded hands" },
   { src: g10, alt: "Saran and Sammyuktha sharing a moment on the couch" },
   { src: g6, alt: "Engagement ring exchange ceremony" },
   { src: g5, alt: "Father blessing the groom during ceremony" },
+  { src: g12, alt: "Saran portrait at floral backdrop" },
   { src: g9, alt: "Sammyuktha posing in golden saree" },
   { src: g2, alt: "Sammyuktha portrait in green saree" },
   { src: g8, alt: "Saran portrait during haldi ceremony" },
