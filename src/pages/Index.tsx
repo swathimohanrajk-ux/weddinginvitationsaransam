@@ -1,16 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Petals from "@/components/wedding/Petals";
+import Hero from "@/components/wedding/Hero";
+import Countdown from "@/components/wedding/Countdown";
+import Details from "@/components/wedding/Details";
+import Gallery from "@/components/wedding/Gallery";
+import RSVP from "@/components/wedding/RSVP";
+import GuestBubble from "@/components/wedding/GuestBubble";
+import MusicToggle from "@/components/wedding/MusicToggle";
+import Footer from "@/components/wedding/Footer";
+import FloralDivider from "@/components/wedding/FloralDivider";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const [refresh, setRefresh] = useState(0);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="relative bg-background min-h-screen overflow-x-hidden">
+      <Petals count={16} />
+      <MusicToggle />
+      <GuestBubble refreshSignal={refresh} />
+
+      <div className="relative z-10">
+        <Hero />
+        <FloralDivider />
+        <Countdown />
+        <Details />
+        <FloralDivider flip />
+        <Gallery />
+        <RSVP onSubmitted={() => setRefresh((r) => r + 1)} />
+        <Footer />
+      </div>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
