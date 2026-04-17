@@ -1,17 +1,33 @@
 import { useEffect, useRef, useState } from "react";
 import { Music, VolumeX } from "lucide-react";
-
-const TRACK = "https://cdn.pixabay.com/audio/2022/10/18/audio_31c2790cdf.mp3";
+import track from "@/assets/wedding-music.mp3";
 
 const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    const a = new Audio(TRACK);
+    const a = new Audio(track);
     a.loop = true;
-    a.volume = 0.35;
+    a.volume = 0.4;
     audioRef.current = a;
+
+    // Try to autoplay (will be blocked by most browsers until user interacts)
+    a.play()
+      .then(() => setPlaying(true))
+      .catch(() => {
+        // Autoplay blocked — start on first user interaction
+        const startOnInteract = () => {
+          a.play()
+            .then(() => setPlaying(true))
+            .catch(() => {});
+          window.removeEventListener("pointerdown", startOnInteract);
+          window.removeEventListener("keydown", startOnInteract);
+        };
+        window.addEventListener("pointerdown", startOnInteract, { once: true });
+        window.addEventListener("keydown", startOnInteract, { once: true });
+      });
+
     return () => {
       a.pause();
       audioRef.current = null;
@@ -29,7 +45,7 @@ const MusicToggle = () => {
         await a.play();
         setPlaying(true);
       } catch {
-        /* ignore autoplay block */
+        /* ignore */
       }
     }
   };
@@ -37,7 +53,7 @@ const MusicToggle = () => {
   return (
     <button
       onClick={toggle}
-      aria-label={playing ? "Pause music" : "Play music"}
+      aria-label={playing ? "Mute music" : "Play music"}
       className="fixed top-5 right-5 z-40 glass-card rounded-full p-3 transition-elegant hover:scale-110 hover:shadow-glow"
     >
       {playing ? (
