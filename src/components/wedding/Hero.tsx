@@ -53,10 +53,10 @@ const Hero = () => {
           </div>
 
           <h1 className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm">
-            Samyuktha
+            Sammyuktha
           </h1>
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-1">
-            Daughter of Parthiban P.
+            DAUGHTER OF P. PARTHIBAN
           </p>
         </motion.div>
 
