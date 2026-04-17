@@ -21,7 +21,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-sm md:text-base tracking-[0.4em] uppercase text-gold mb-6"
         >
-          • Together with their families •
+          • TOGETHER WITH FAMILIES •
         </motion.p>
 
         <motion.h2
