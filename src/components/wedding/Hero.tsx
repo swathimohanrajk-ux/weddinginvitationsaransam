@@ -33,32 +33,52 @@ const Hero = () => {
           We invite you to celebrate
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-          className="my-8"
-        >
-          <h1 className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm">
+        <div className="my-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 24, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm"
+          >
             Saran
-          </h1>
-          <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-1">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.6 }}
+            className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-1"
+          >
             Son of R. Soundararajan
-          </p>
+          </motion.p>
 
-          <div className="flex items-center justify-center gap-4 my-6">
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0.4 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 1.2, delay: 1.8 }}
+            className="flex items-center justify-center gap-4 my-6"
+          >
             <span className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
             <span className="font-script text-3xl md:text-4xl text-gold">&</span>
             <span className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
-          </div>
+          </motion.div>
 
-          <h1 className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm">
+          <motion.h1
+            initial={{ opacity: 0, y: 24, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.8, delay: 2.0, ease: [0.22, 1, 0.36, 1] }}
+            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm"
+          >
             Sammyuktha
-          </h1>
-          <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-1">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 3.0 }}
+            className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-1"
+          >
             DAUGHTER OF P. PARTHIBAN
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

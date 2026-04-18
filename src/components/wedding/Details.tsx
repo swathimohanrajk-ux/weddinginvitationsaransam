@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Sparkles } from "lucide-react";
+import { Calendar, Clock, MapPin, Sparkles, CalendarPlus, Apple } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { googleCalendarUrl, outlookCalendarUrl, downloadIcs } from "@/lib/calendar";
 
 const cards = [
   { icon: Calendar, title: "Wedding", main: "September 12", sub: "Saturday" },
@@ -43,14 +45,54 @@ const Details = () => {
         </div>
 
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="glass-card rounded-3xl p-8 text-center max-w-3xl mx-auto mb-10"
+        >
+          <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-2">Save the Date</p>
+          <h3 className="font-script text-3xl md:text-4xl text-foreground/85 mb-5">Add to your Calendar</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button
+              asChild
+              className="rounded-full bg-gradient-gold text-primary-foreground hover:shadow-glow hover:scale-105 transition-elegant shadow-soft px-6"
+            >
+              <a href={googleCalendarUrl()} target="_blank" rel="noopener noreferrer">
+                <CalendarPlus className="h-4 w-4" />
+                Google
+              </a>
+            </Button>
+            <Button
+              onClick={downloadIcs}
+              variant="outline"
+              className="rounded-full border-gold/40 hover:bg-secondary hover:scale-105 transition-elegant shadow-soft px-6"
+            >
+              <Apple className="h-4 w-4" />
+              Apple
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full border-gold/40 hover:bg-secondary hover:scale-105 transition-elegant shadow-soft px-6"
+            >
+              <a href={outlookCalendarUrl()} target="_blank" rel="noopener noreferrer">
+                <Calendar className="h-4 w-4" />
+                Outlook
+              </a>
+            </Button>
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="glass-card rounded-3xl p-10 text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-gold mb-5 shadow-soft">
-            <MapPin className="h-6 w-6 text-primary-foreground" />
+          <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-gold mb-5 pin-animated">
+            <MapPin className="h-7 w-7 text-primary-foreground drop-shadow" strokeWidth={2.4} />
           </div>
           <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-2">Venue</p>
           <h3 className="font-serif text-3xl md:text-4xl text-foreground/85">Suguna Auditorium</h3>

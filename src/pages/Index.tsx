@@ -6,6 +6,7 @@ import Details from "@/components/wedding/Details";
 import Gallery from "@/components/wedding/Gallery";
 import RSVP from "@/components/wedding/RSVP";
 import GuestBubble from "@/components/wedding/GuestBubble";
+import GuestWishes from "@/components/wedding/GuestWishes";
 import MusicToggle from "@/components/wedding/MusicToggle";
 import Footer from "@/components/wedding/Footer";
 import FloralDivider from "@/components/wedding/FloralDivider";
@@ -18,6 +19,7 @@ const Index = () => {
       <Petals count={16} />
       <MusicToggle />
       <GuestBubble refreshSignal={refresh} />
+      <GuestWishes />
 
       <div className="relative z-10">
         <Hero />

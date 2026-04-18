@@ -152,3 +152,30 @@
   animation: petal-fall linear infinite;
   opacity: 0.8;
 }
+
+/* Premium pin bounce + glow */
+@keyframes pin-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes pin-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.55), var(--shadow-soft); }
+  50% { box-shadow: 0 0 0 14px hsl(var(--gold) / 0), var(--shadow-soft); }
+}
+.pin-animated {
+  animation: pin-bounce 2.4s ease-in-out infinite, pin-glow 2.4s ease-in-out infinite;
+}
+
+/* Sparkle for sent wishes */
+@keyframes sparkle-pop {
+  0% { transform: scale(0.4) rotate(0deg); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: scale(1.4) rotate(40deg); opacity: 0; }
+}
+.sparkle-pop { animation: sparkle-pop 900ms ease-out forwards; }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.animate-float-soft { animation: float-soft 4s ease-in-out infinite; }

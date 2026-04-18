@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      guest_wishes: {
+        Row: {
+          created_at: string
+          guest_name: string
+          id: string
+          is_anonymous: boolean
+          message: string
+        }
+        Insert: {
+          created_at?: string
+          guest_name: string
+          id?: string
+          is_anonymous?: boolean
+          message: string
+        }
+        Update: {
+          created_at?: string
+          guest_name?: string
+          id?: string
+          is_anonymous?: boolean
+          message?: string
+        }
+        Relationships: []
+      }
       rsvps: {
         Row: {
           created_at: string
