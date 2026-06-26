@@ -38,7 +38,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 24, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm"
+            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold-vibrant leading-tight"
           >
             Saran
           </motion.h1>
@@ -66,7 +66,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 24, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.8, delay: 2.0, ease: [0.22, 1, 0.36, 1] }}
-            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold leading-tight drop-shadow-sm"
+            className="font-script text-6xl md:text-8xl lg:text-9xl text-gradient-gold-vibrant leading-tight"
           >
             Sammyuktha
           </motion.h1>

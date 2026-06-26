@@ -174,6 +174,25 @@
 }
 .sparkle-pop { animation: sparkle-pop 900ms ease-out forwards; }
 
+/* Vibrant gold gradient + mild glow for hero names */
+.text-gradient-gold-vibrant {
+  background: linear-gradient(135deg, hsl(45 95% 68%) 0%, hsl(38 85% 55%) 35%, hsl(28 75% 45%) 60%, hsl(42 90% 62%) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px hsl(40 90% 65% / 0.45)) drop-shadow(0 2px 6px hsl(30 60% 40% / 0.25));
+  animation: name-glow 4s ease-in-out infinite, gold-shimmer 6s ease-in-out infinite;
+}
+@keyframes name-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px hsl(40 90% 65% / 0.35)) drop-shadow(0 2px 6px hsl(30 60% 40% / 0.25)); }
+  50% { filter: drop-shadow(0 0 18px hsl(42 95% 70% / 0.65)) drop-shadow(0 2px 8px hsl(30 60% 40% / 0.3)); }
+}
+@keyframes gold-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
