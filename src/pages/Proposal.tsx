@@ -221,6 +221,64 @@ const Proposal = () => {
         <Heart className="w-10 h-10 md:w-14 md:h-14 text-rose-400 fill-rose-400 drop-shadow-[0_0_18px_rgba(255,120,140,0.8)]" />
       </div>
 
+      {/* Sacred knot tying around joined hands */}
+      <div
+        className="absolute left-1/2 bottom-[24vh] pointer-events-none opacity-0"
+        style={{
+          animation:
+            "knot-bloom 1.2s cubic-bezier(0.22,1,0.36,1) 6s forwards, knot-glow 2.8s ease-in-out 7s infinite",
+        }}
+      >
+        <svg
+          viewBox="0 0 120 90"
+          className="w-[110px] md:w-[160px] h-auto"
+        >
+          {/* Ribbon trailing left */}
+          <path
+            d="M10 75 Q30 50 55 50"
+            stroke="hsl(40 95% 58%)"
+            strokeWidth="5"
+            fill="none"
+            strokeLinecap="round"
+            style={{
+              strokeDasharray: 300,
+              strokeDashoffset: 300,
+              animation: "knot-draw 1.4s ease-out 6.2s forwards",
+            }}
+          />
+          {/* Ribbon trailing right */}
+          <path
+            d="M110 75 Q90 50 65 50"
+            stroke="hsl(40 95% 58%)"
+            strokeWidth="5"
+            fill="none"
+            strokeLinecap="round"
+            style={{
+              strokeDasharray: 300,
+              strokeDashoffset: 300,
+              animation: "knot-draw 1.4s ease-out 6.2s forwards",
+            }}
+          />
+          {/* Left bow loop */}
+          <path
+            d="M55 50 Q30 25 32 45 Q34 60 55 52 Z"
+            fill="hsl(45 95% 62%)"
+            stroke="hsl(35 90% 45%)"
+            strokeWidth="1.5"
+          />
+          {/* Right bow loop */}
+          <path
+            d="M65 50 Q90 25 88 45 Q86 60 65 52 Z"
+            fill="hsl(45 95% 62%)"
+            stroke="hsl(35 90% 45%)"
+            strokeWidth="1.5"
+          />
+          {/* Knot center */}
+          <ellipse cx="60" cy="50" rx="7" ry="9" fill="hsl(35 90% 45%)" />
+          <ellipse cx="60" cy="50" rx="4" ry="6" fill="hsl(45 100% 70%)" />
+        </svg>
+      </div>
+
       {/* Title */}
       <div className="relative z-10 pt-10 px-6 text-center">
         <p className="text-[11px] tracking-[0.4em] uppercase text-amber-900/70 mb-2">A magical moment</p>
