@@ -199,12 +199,12 @@
 }
 .animate-float-soft { animation: float-soft 4s ease-in-out infinite; }
 
-/* Floating ring icon — horizontal drift */
+/* Floating ring icon — gentle left-right sway */
 @keyframes ring-drift {
-  0%, 100% { transform: translateX(0) translateY(0) rotate(-2deg); }
-  50% { transform: translateX(-10px) translateY(-4px) rotate(2deg); }
+  0%, 100% { transform: translateX(-8px) rotate(-4deg); }
+  50% { transform: translateX(8px) rotate(4deg); }
 }
-.ring-float { animation: ring-drift 5s ease-in-out infinite; }
+.ring-float { animation: ring-drift 3.5s ease-in-out infinite; }
 
 /* Proposal scene animations */
 @keyframes cloud-drift {
