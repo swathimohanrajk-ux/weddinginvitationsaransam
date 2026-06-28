@@ -8,6 +8,7 @@ import RSVP from "@/components/wedding/RSVP";
 import GuestBubble from "@/components/wedding/GuestBubble";
 import GuestWishes from "@/components/wedding/GuestWishes";
 import MusicToggle from "@/components/wedding/MusicToggle";
+import FloatingRing from "@/components/wedding/FloatingRing";
 import Footer from "@/components/wedding/Footer";
 import FloralDivider from "@/components/wedding/FloralDivider";
 
@@ -18,6 +19,7 @@ const Index = () => {
     <main className="relative bg-background min-h-screen overflow-x-hidden">
       <Petals count={16} />
       <MusicToggle />
+      <FloatingRing />
       <GuestBubble refreshSignal={refresh} />
       <GuestWishes />
 
