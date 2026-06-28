@@ -199,6 +199,9 @@ const Proposal = () => {
           <path d="M27 222 L89 222 L87 216 L29 216 Z" fill="hsl(40 80% 50%)" />
           {/* Vertical fold */}
           <line x1="58" y1="112" x2="58" y2="228" stroke="hsl(40 30% 80%)" strokeWidth="1.2" />
+          {/* Outer arm hanging at his side */}
+          <path d="M76 52 Q86 90 84 120" stroke="hsl(30 50% 88%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <circle cx="84" cy="122" r="4.5" fill="hsl(30 50% 88%)" />
           {/* Inner arm reaching out (toward bride) */}
           <path d="M40 60 Q18 88 2 110" stroke="hsl(30 50% 88%)" strokeWidth="6" fill="none" strokeLinecap="round" />
           {/* Hand */}
