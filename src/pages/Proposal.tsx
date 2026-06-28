@@ -182,13 +182,13 @@ const Proposal = () => {
           style={{ animation: "walk-right 6s ease-out forwards", filter: "drop-shadow(0 10px 16px rgba(80,40,20,0.4))" }}
         >
           {/* Head */}
-          <circle cx="58" cy="28" r="13" fill="hsl(28 45% 50%)" />
+          <circle cx="58" cy="28" r="13" fill="hsl(30 50% 88%)" />
           {/* Hair */}
           <path d="M46 24 Q58 8 70 24 Q66 18 58 18 Q50 18 46 24 Z" fill="hsl(25 35% 12%)" />
           {/* Neck */}
-          <rect x="54" y="40" width="8" height="6" fill="hsl(28 45% 50%)" />
+          <rect x="54" y="40" width="8" height="6" fill="hsl(30 50% 88%)" />
           {/* Bare torso */}
-          <path d="M40 50 Q58 46 76 50 L78 110 L38 110 Z" fill="hsl(28 45% 50%)" />
+          <path d="M40 50 Q58 46 76 50 L78 110 L38 110 Z" fill="hsl(30 50% 88%)" />
           {/* Angavastram - diagonal cream sash */}
           <path d="M38 52 L52 50 L82 108 L72 114 Z" fill="hsl(45 60% 92%)" opacity="0.95" />
           <path d="M40 56 L48 54 L78 110 L74 112 Z" fill="hsl(45 85% 60%)" opacity="0.6" />
@@ -200,7 +200,9 @@ const Proposal = () => {
           {/* Vertical fold */}
           <line x1="58" y1="112" x2="58" y2="228" stroke="hsl(40 30% 80%)" strokeWidth="1.2" />
           {/* Inner arm reaching out (toward bride) */}
-          <path d="M40 60 Q18 78 10 100" stroke="hsl(28 45% 50%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M40 60 Q18 88 2 110" stroke="hsl(30 50% 88%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          {/* Hand */}
+          <circle cx="2" cy="110" r="5" fill="hsl(30 50% 88%)" />
         </svg>
       </div>
 
