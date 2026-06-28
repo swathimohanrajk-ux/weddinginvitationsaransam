@@ -18,7 +18,6 @@ const Index = () => {
     <main className="relative bg-background min-h-screen overflow-x-hidden">
       <Petals count={16} />
       <MusicToggle />
-      <FloatingRing />
       <GuestBubble refreshSignal={refresh} />
       <GuestWishes />
 
