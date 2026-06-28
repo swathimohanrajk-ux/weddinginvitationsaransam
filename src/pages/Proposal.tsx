@@ -136,7 +136,7 @@ const Proposal = () => {
           {/* Head */}
           <circle cx="62" cy="28" r="14" fill="hsl(28 45% 55%)" />
           {/* Hair bun on top */}
-          <ellipsis />
+          {/* Hair bun */}
           <circle cx="62" cy="16" r="8" fill="hsl(25 35% 12%)" />
           {/* Maang tikka */}
           <line x1="62" y1="16" x2="62" y2="26" stroke="hsl(45 90% 70%)" strokeWidth="1.2" />
