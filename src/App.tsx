@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Proposal from "./pages/Proposal.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import FloatingRing from "./components/wedding/FloatingRing";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingRing />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/proposal" element={<Proposal />} />
