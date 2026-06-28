@@ -158,6 +158,10 @@ const Proposal = () => {
           {/* Gold zari border */}
           <path d="M24 230 L100 230 L97 222 L27 222 Z" fill="hsl(45 90% 60%)" />
           <path d="M27 222 L97 222 L95 216 L29 216 Z" fill="hsl(40 80% 50%)" />
+          {/* Outer arm hanging at her side */}
+          <path d="M44 52 Q34 90 36 120" stroke="hsl(28 45% 55%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <circle cx="36" cy="122" r="4.5" fill="hsl(28 45% 55%)" />
+          <circle cx="34" cy="118" r="2.5" fill="hsl(45 90% 70%)" />
           {/* Inner arm reaching out (toward groom) */}
           <path d="M80 60 Q102 88 118 110" stroke="hsl(28 45% 55%)" strokeWidth="6" fill="none" strokeLinecap="round" />
           {/* Bangles */}
