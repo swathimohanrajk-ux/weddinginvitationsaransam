@@ -120,36 +120,85 @@ const Proposal = () => {
       {/* Ground */}
       <div className="absolute bottom-0 left-0 right-0 h-[28vh] bg-gradient-to-t from-amber-200/70 via-amber-100/40 to-transparent" />
 
-      {/* Silhouettes */}
-      <div className="absolute bottom-[18vh] left-1/2 -translate-x-1/2 w-full flex items-end justify-center">
-        {/* Bride */}
+      {/* Silhouettes - South Indian bride & groom */}
+      <div className="absolute bottom-[18vh] left-0 right-0 flex items-end justify-center gap-0">
+        {/* Bride - Kanchipuram saree, flower braid, jewelry */}
         <svg
-          viewBox="0 0 80 200"
-          className="w-[110px] md:w-[170px] h-auto"
-          style={{ animation: "walk-left 6s ease-out forwards", filter: "drop-shadow(0 8px 14px rgba(80,40,20,0.4))" }}
+          viewBox="0 0 120 240"
+          className="w-[130px] md:w-[200px] h-auto"
+          style={{ animation: "walk-left 6s ease-out forwards", filter: "drop-shadow(0 10px 16px rgba(80,20,40,0.4))" }}
         >
-          <g fill="hsl(25 35% 18%)">
-            <circle cx="40" cy="22" r="14" />
-            <path d="M22 36 Q40 30 58 36 L70 90 Q60 100 40 100 Q20 100 10 90 Z" />
-            <path d="M18 90 Q40 110 62 90 L74 200 L6 200 Z" />
-          </g>
-          {/* Veil */}
-          <path d="M22 18 Q40 -6 58 18 L66 60 Q40 50 14 60 Z" fill="hsl(36 50% 96% / 0.55)" />
+          {/* Long flower braid behind */}
+          <path d="M58 38 Q40 90 50 160 Q54 180 58 200" stroke="hsl(25 35% 12%)" strokeWidth="10" fill="none" strokeLinecap="round" />
+          {[55, 80, 105, 130, 155, 180].map((cy, i) => (
+            <circle key={i} cx={48 + (i % 2) * 4} cy={cy} r="4" fill="hsl(45 90% 75%)" stroke="hsl(15 70% 55%)" strokeWidth="0.8" />
+          ))}
+          {/* Head */}
+          <circle cx="62" cy="28" r="14" fill="hsl(28 45% 55%)" />
+          {/* Hair bun on top */}
+          <ellipsis />
+          <circle cx="62" cy="16" r="8" fill="hsl(25 35% 12%)" />
+          {/* Maang tikka */}
+          <line x1="62" y1="16" x2="62" y2="26" stroke="hsl(45 90% 70%)" strokeWidth="1.2" />
+          <circle cx="62" cy="28" r="2" fill="hsl(45 90% 70%)" />
+          {/* Neck + necklace */}
+          <rect x="58" y="40" width="8" height="6" fill="hsl(28 45% 55%)" />
+          <path d="M52 50 Q62 56 72 50" stroke="hsl(45 90% 70%)" strokeWidth="2" fill="none" />
+          {/* Blouse */}
+          <path d="M44 50 Q62 46 80 50 L82 78 L42 78 Z" fill="hsl(350 60% 30%)" />
+          {/* Pallu over left shoulder */}
+          <path d="M44 50 Q30 70 36 110 L48 108 Q50 78 52 60 Z" fill="hsl(0 70% 38%)" />
+          <path d="M36 110 L48 108 L46 118 L34 120 Z" fill="hsl(45 85% 65%)" />
+          {/* Saree skirt - A-line with pleats and gold border */}
+          <path d="M42 78 L82 78 L100 230 L24 230 Z" fill="hsl(350 65% 32%)" />
+          {/* Pleats */}
+          {[40, 56, 72, 88].map((x, i) => (
+            <line key={i} x1={x + 12} y1="100" x2={x + (i - 1) * 4 + 10} y2="228" stroke="hsl(350 70% 22%)" strokeWidth="1.2" />
+          ))}
+          {/* Gold zari border */}
+          <path d="M24 230 L100 230 L97 222 L27 222 Z" fill="hsl(45 90% 60%)" />
+          <path d="M27 222 L97 222 L95 216 L29 216 Z" fill="hsl(40 80% 50%)" />
+          {/* Inner arm reaching out (toward groom) */}
+          <path d="M80 60 Q102 78 110 100" stroke="hsl(28 45% 55%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          {/* Bangles */}
+          <circle cx="108" cy="98" r="3" fill="hsl(45 90% 70%)" />
+          <circle cx="104" cy="92" r="2.5" fill="hsl(45 90% 70%)" />
         </svg>
 
-        {/* Groom (mirrored) */}
-        <svg
-          viewBox="0 0 80 200"
-          className="w-[110px] md:w-[170px] h-auto"
-          style={{ animation: "walk-right 6s ease-out forwards", filter: "drop-shadow(0 8px 14px rgba(80,40,20,0.4))" }}
+        {/* Joining hands / heart between them */}
+        <div
+          className="self-end mb-[120px] md:mb-[170px] opacity-0"
+          style={{ animation: "fade-in 1s ease-out 4s forwards" }}
         >
-          <g fill="hsl(25 35% 14%)">
-            <circle cx="40" cy="22" r="13" />
-            <rect x="34" y="6" width="12" height="6" rx="1" />
-            <rect x="28" y="10" width="24" height="4" rx="1" />
-            <path d="M22 36 L58 36 L66 100 L14 100 Z" />
-            <path d="M18 100 L62 100 L70 200 L10 200 Z" />
-          </g>
+          <Heart className="w-6 h-6 md:w-9 md:h-9 text-rose-500 fill-rose-500 drop-shadow-[0_0_14px_rgba(255,100,130,0.9)]" />
+        </div>
+
+        {/* Groom - veshti + angavastram */}
+        <svg
+          viewBox="0 0 120 240"
+          className="w-[130px] md:w-[200px] h-auto"
+          style={{ animation: "walk-right 6s ease-out forwards", filter: "drop-shadow(0 10px 16px rgba(80,40,20,0.4))" }}
+        >
+          {/* Head */}
+          <circle cx="58" cy="28" r="13" fill="hsl(28 45% 50%)" />
+          {/* Hair */}
+          <path d="M46 24 Q58 8 70 24 Q66 18 58 18 Q50 18 46 24 Z" fill="hsl(25 35% 12%)" />
+          {/* Neck */}
+          <rect x="54" y="40" width="8" height="6" fill="hsl(28 45% 50%)" />
+          {/* Bare torso */}
+          <path d="M40 50 Q58 46 76 50 L78 110 L38 110 Z" fill="hsl(28 45% 50%)" />
+          {/* Angavastram - diagonal cream sash */}
+          <path d="M38 52 L52 50 L82 108 L72 114 Z" fill="hsl(45 60% 92%)" opacity="0.95" />
+          <path d="M40 56 L48 54 L78 110 L74 112 Z" fill="hsl(45 85% 60%)" opacity="0.6" />
+          {/* Veshti - white dhoti */}
+          <path d="M38 110 L78 110 L92 230 L24 230 Z" fill="hsl(45 50% 96%)" />
+          {/* Gold zari border on veshti */}
+          <path d="M24 230 L92 230 L89 222 L27 222 Z" fill="hsl(45 90% 60%)" />
+          <path d="M27 222 L89 222 L87 216 L29 216 Z" fill="hsl(40 80% 50%)" />
+          {/* Vertical fold */}
+          <line x1="58" y1="112" x2="58" y2="228" stroke="hsl(40 30% 80%)" strokeWidth="1.2" />
+          {/* Inner arm reaching out (toward bride) */}
+          <path d="M40 60 Q18 78 10 100" stroke="hsl(28 45% 50%)" strokeWidth="6" fill="none" strokeLinecap="round" />
         </svg>
       </div>
 
