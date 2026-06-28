@@ -159,10 +159,12 @@ const Proposal = () => {
           <path d="M24 230 L100 230 L97 222 L27 222 Z" fill="hsl(45 90% 60%)" />
           <path d="M27 222 L97 222 L95 216 L29 216 Z" fill="hsl(40 80% 50%)" />
           {/* Inner arm reaching out (toward groom) */}
-          <path d="M80 60 Q102 78 110 100" stroke="hsl(28 45% 55%)" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M80 60 Q102 88 118 110" stroke="hsl(28 45% 55%)" strokeWidth="6" fill="none" strokeLinecap="round" />
           {/* Bangles */}
-          <circle cx="108" cy="98" r="3" fill="hsl(45 90% 70%)" />
-          <circle cx="104" cy="92" r="2.5" fill="hsl(45 90% 70%)" />
+          <circle cx="110" cy="100" r="3" fill="hsl(45 90% 70%)" />
+          <circle cx="106" cy="94" r="2.5" fill="hsl(45 90% 70%)" />
+          {/* Hand */}
+          <circle cx="118" cy="110" r="5" fill="hsl(28 45% 55%)" />
         </svg>
 
         {/* Joining hands / heart between them */}
