@@ -221,62 +221,72 @@ const Proposal = () => {
         <Heart className="w-10 h-10 md:w-14 md:h-14 text-rose-400 fill-rose-400 drop-shadow-[0_0_18px_rgba(255,120,140,0.8)]" />
       </div>
 
-      {/* Sacred knot tying around joined hands */}
+      {/* Nuptial knot — Thali / Mangalyam */}
       <div
-        className="absolute left-1/2 bottom-[24vh] pointer-events-none opacity-0"
+        className="absolute left-1/2 bottom-[26vh] pointer-events-none opacity-0"
         style={{
           animation:
-            "knot-bloom 1.2s cubic-bezier(0.22,1,0.36,1) 6s forwards, knot-glow 2.8s ease-in-out 7s infinite",
+            "knot-bloom 1.4s cubic-bezier(0.22,1,0.36,1) 6s forwards, knot-glow 3s ease-in-out 7.2s infinite",
         }}
       >
         <svg
-          viewBox="0 0 120 90"
-          className="w-[110px] md:w-[160px] h-auto"
+          viewBox="0 0 160 140"
+          className="w-[140px] md:w-[200px] h-auto"
         >
-          {/* Ribbon trailing left */}
+          {/* Yellow sacred thread loop */}
           <path
-            d="M10 75 Q30 50 55 50"
-            stroke="hsl(40 95% 58%)"
-            strokeWidth="5"
+            d="M20 20 Q80 90 140 20"
+            stroke="hsl(48 95% 55%)"
+            strokeWidth="3"
             fill="none"
             strokeLinecap="round"
             style={{
-              strokeDasharray: 300,
-              strokeDashoffset: 300,
-              animation: "knot-draw 1.4s ease-out 6.2s forwards",
+              strokeDasharray: 320,
+              strokeDashoffset: 320,
+              animation: "knot-draw 1.6s ease-out 6.1s forwards",
             }}
           />
-          {/* Ribbon trailing right */}
           <path
-            d="M110 75 Q90 50 65 50"
-            stroke="hsl(40 95% 58%)"
-            strokeWidth="5"
+            d="M20 20 Q80 70 140 20"
+            stroke="hsl(40 90% 45%)"
+            strokeWidth="1.2"
             fill="none"
             strokeLinecap="round"
             style={{
-              strokeDasharray: 300,
-              strokeDashoffset: 300,
-              animation: "knot-draw 1.4s ease-out 6.2s forwards",
+              strokeDasharray: 320,
+              strokeDashoffset: 320,
+              animation: "knot-draw 1.6s ease-out 6.3s forwards",
             }}
           />
-          {/* Left bow loop */}
-          <path
-            d="M55 50 Q30 25 32 45 Q34 60 55 52 Z"
-            fill="hsl(45 95% 62%)"
-            stroke="hsl(35 90% 45%)"
-            strokeWidth="1.5"
-          />
-          {/* Right bow loop */}
-          <path
-            d="M65 50 Q90 25 88 45 Q86 60 65 52 Z"
-            fill="hsl(45 95% 62%)"
-            stroke="hsl(35 90% 45%)"
-            strokeWidth="1.5"
-          />
-          {/* Knot center */}
-          <ellipse cx="60" cy="50" rx="7" ry="9" fill="hsl(35 90% 45%)" />
-          <ellipse cx="60" cy="50" rx="4" ry="6" fill="hsl(45 100% 70%)" />
+
+          {/* Sacred knot bead (tied center) */}
+          <ellipse cx="80" cy="78" rx="6" ry="4" fill="hsl(35 90% 38%)" />
+
+          {/* Thali pendant chain */}
+          <line x1="80" y1="82" x2="80" y2="92" stroke="hsl(45 95% 55%)" strokeWidth="2" />
+
+          {/* Thali pendant — South Indian mangalyam */}
+          <g transform="translate(80 112)">
+            <circle r="18" fill="hsl(45 100% 60%)" stroke="hsl(35 90% 38%)" strokeWidth="2" />
+            <circle r="14" fill="none" stroke="hsl(35 90% 38%)" strokeWidth="1" />
+            {/* Decorative engraving */}
+            <path d="M-8 0 Q0 -10 8 0 Q0 10 -8 0 Z" fill="hsl(35 90% 38%)" />
+            <circle r="3" fill="hsl(0 75% 50%)" />
+            {/* Tiny gold beads around */}
+            {[0, 60, 120, 180, 240, 300].map((deg) => (
+              <circle
+                key={deg}
+                cx={Math.cos((deg * Math.PI) / 180) * 18}
+                cy={Math.sin((deg * Math.PI) / 180) * 18}
+                r="2"
+                fill="hsl(40 95% 50%)"
+              />
+            ))}
+          </g>
         </svg>
+        <p className="text-center mt-2 text-amber-900/80 italic font-serif text-xs md:text-sm tracking-wide drop-shadow">
+          ~ Tying the nuptial knot ~
+        </p>
       </div>
 
       {/* Title */}
