@@ -284,9 +284,6 @@ const Proposal = () => {
             ))}
           </g>
         </svg>
-        <p className="text-center mt-2 text-amber-900/80 italic font-serif text-xs md:text-sm tracking-wide drop-shadow">
-          ~ Tying the nuptial knot ~
-        </p>
       </div>
 
       {/* Title */}
