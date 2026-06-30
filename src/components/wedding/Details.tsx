@@ -6,7 +6,7 @@ import { googleCalendarUrl, outlookCalendarUrl, downloadIcs } from "@/lib/calend
 const cards = [
   { icon: Calendar, title: "Wedding", main: "September 12", sub: "Saturday" },
   { icon: Sparkles, title: "Reception", main: "September 13", sub: "Sunday" },
-  { icon: Clock, title: "Wedding Time", main: "10:00 AM", sub: "September 12" },
+  { icon: Clock, title: "Wedding Time", main: "7:30 AM", sub: "September 12" },
 ];
 
 const Details = () => {
