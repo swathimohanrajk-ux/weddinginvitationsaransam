@@ -33,7 +33,7 @@ const container = {
 };
 const itemAnim = {
   hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
 const CeremonySchedule = () => {
@@ -55,7 +55,7 @@ const CeremonySchedule = () => {
           initial={{ opacity: 0, y: 30, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="glass-card rounded-3xl p-8 md:p-12 shadow-soft"
         >
           <motion.div
