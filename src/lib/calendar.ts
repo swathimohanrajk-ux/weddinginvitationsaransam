@@ -4,9 +4,9 @@ export const WEDDING_EVENT = {
   description:
     "Together with families, we joyfully invite you to celebrate the wedding of Saran & Sammyuktha. Venue: Suguna Auditorium, Sitra. Map: https://maps.app.goo.gl/MPNAbGj9Dv4uHpUC8",
   location: "Suguna Auditorium, Sitra",
-  // Local IST: Sep 12, 2026 7:30 AM → 10:30 AM (UTC = IST - 5:30)
-  startUtc: "20260912T020000Z",
-  endUtc: "20260912T050000Z",
+  // Local IST: Sep 13, 2026 6:30 AM → 9:30 AM (UTC = IST - 5:30)
+  startUtc: "20260913T010000Z",
+  endUtc: "20260913T040000Z",
   mapUrl: "https://maps.app.goo.gl/MPNAbGj9Dv4uHpUC8",
 };
 
