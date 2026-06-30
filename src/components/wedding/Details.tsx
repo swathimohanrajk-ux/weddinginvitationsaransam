@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { googleCalendarUrl, outlookCalendarUrl, downloadIcs } from "@/lib/calendar";
 
 const cards = [
-  { icon: Calendar, title: "Wedding", main: "September 12", sub: "Saturday" },
-  { icon: Sparkles, title: "Reception", main: "September 13", sub: "Sunday" },
-  { icon: Clock, title: "Wedding Time", main: "7:30 AM", sub: "September 12" },
+  { icon: Calendar, title: "Wedding", main: "September 13", sub: "Sunday" },
+  { icon: Sparkles, title: "Reception", main: "September 14", sub: "Monday" },
+  { icon: Clock, title: "Wedding Time", main: "6:30 AM", sub: "September 13" },
 ];
 
 const Details = () => {
