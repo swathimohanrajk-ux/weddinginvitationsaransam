@@ -251,36 +251,36 @@
   50% { filter: drop-shadow(0 0 16px hsl(40 100% 65% / 0.95)); }
 }
 
-/* Blue glow pulse for ceremony times */
+/* Blue neon glow for ceremony times */
 @keyframes blue-glow-pulse {
   0%, 100% {
-    color: hsl(210 95% 62%);
-    text-shadow: 0 0 4px hsl(210 100% 70% / 0.5), 0 0 8px hsl(210 100% 60% / 0.3);
+    color: hsl(210 100% 55%);
+    text-shadow: 0 0 5px hsl(210 100% 65% / 0.75), 0 0 12px hsl(210 100% 60% / 0.55), 0 0 22px hsl(215 100% 55% / 0.35);
   }
   50% {
-    color: hsl(205 100% 72%);
-    text-shadow: 0 0 12px hsl(205 100% 75% / 0.95), 0 0 22px hsl(210 100% 60% / 0.75), 0 0 32px hsl(215 100% 55% / 0.5);
+    color: hsl(205 100% 68%);
+    text-shadow: 0 0 10px hsl(205 100% 78% / 1), 0 0 24px hsl(210 100% 68% / 0.9), 0 0 38px hsl(215 100% 62% / 0.65);
   }
 }
 .time-glow {
   animation: blue-glow-pulse 2.6s ease-in-out infinite;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-/* Golden neon pulse for Wedding Muhurtham */
+/* Golden neon glow for Wedding Muhurtham */
 @keyframes gold-neon-pulse {
   0%, 100% {
-    color: hsl(45 95% 65%);
-    text-shadow: 0 0 6px hsl(45 100% 65% / 0.9), 0 0 14px hsl(42 100% 55% / 0.75), 0 0 24px hsl(38 100% 50% / 0.55);
+    color: hsl(45 100% 62%);
+    text-shadow: 0 0 6px hsl(45 100% 70% / 0.95), 0 0 16px hsl(42 100% 60% / 0.85), 0 0 28px hsl(38 100% 55% / 0.65);
   }
   50% {
-    color: hsl(48 100% 75%);
-    text-shadow: 0 0 14px hsl(45 100% 75% / 1), 0 0 28px hsl(42 100% 62% / 0.95), 0 0 44px hsl(38 100% 55% / 0.8);
+    color: hsl(48 100% 78%);
+    text-shadow: 0 0 14px hsl(45 100% 80% / 1), 0 0 32px hsl(42 100% 70% / 1), 0 0 50px hsl(38 100% 60% / 0.9);
   }
 }
 .time-glow-gold {
   animation: gold-neon-pulse 2.6s ease-in-out infinite;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
