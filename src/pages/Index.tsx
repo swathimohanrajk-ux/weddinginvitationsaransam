@@ -7,7 +7,6 @@ import Gallery from "@/components/wedding/Gallery";
 import RSVP from "@/components/wedding/RSVP";
 import GuestBubble from "@/components/wedding/GuestBubble";
 import GuestWishes from "@/components/wedding/GuestWishes";
-import CeremonySchedule from "@/components/wedding/CeremonySchedule";
 import MusicToggle from "@/components/wedding/MusicToggle";
 import Footer from "@/components/wedding/Footer";
 import FloralDivider from "@/components/wedding/FloralDivider";
@@ -26,7 +25,7 @@ const Index = () => {
         <Hero />
         <FloralDivider />
         <Countdown />
-        <CeremonySchedule />
+        
         <Details />
         <FloralDivider flip />
         <Gallery />
