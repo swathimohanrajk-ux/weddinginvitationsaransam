@@ -79,7 +79,9 @@ const CeremonySchedule = () => {
                       <p className="font-serif text-base md:text-lg text-foreground/85 leading-snug">
                         {it.label}
                       </p>
-                      <p className="time-glow font-serif text-base md:text-lg mt-1">{it.time}</p>
+                      <p className={`font-serif text-base md:text-lg mt-1 ${it.label === "Wedding Muhurtham" ? "time-glow-gold" : "time-glow"}`}>
+                        {it.time}
+                      </p>
                     </motion.li>
                   ))}
                 </ul>
