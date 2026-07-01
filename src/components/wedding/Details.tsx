@@ -2,9 +2,7 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin, CalendarPlus, Apple } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { googleCalendarUrl, outlookCalendarUrl, downloadIcs } from "@/lib/calendar";
-
 import CeremonySchedule from "@/components/wedding/CeremonySchedule";
-
 
 const Details = () => {
   return (
