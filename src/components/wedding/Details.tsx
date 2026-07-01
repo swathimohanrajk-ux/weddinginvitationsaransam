@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Sparkles, CalendarPlus, Apple } from "lucide-react";
+import { Calendar, MapPin, CalendarPlus, Apple } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { googleCalendarUrl, outlookCalendarUrl, downloadIcs } from "@/lib/calendar";
 
-const cards = [
-  { icon: Calendar, title: "Wedding", main: "September 13", sub: "Sunday" },
-  { icon: Sparkles, title: "Reception", main: "September 14", sub: "Monday" },
-  { icon: Clock, title: "Wedding Time", main: "6:30 AM", sub: "September 13" },
-];
+import CeremonySchedule from "@/components/wedding/CeremonySchedule";
+
 
 const Details = () => {
   return (
@@ -24,25 +21,8 @@ const Details = () => {
           <h2 className="font-script text-5xl md:text-6xl text-foreground/85">Wedding Details</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {cards.map((c, i) => (
-            <motion.article
-              key={c.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: i * 0.15 }}
-              className="glass-card rounded-3xl p-8 text-center transition-elegant hover:-translate-y-1 hover:shadow-glow"
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-gold mb-5 shadow-soft">
-                <c.icon className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-2">{c.title}</p>
-              <h3 className="font-serif text-3xl md:text-4xl text-foreground/85">{c.main}</h3>
-              <p className="text-sm text-muted-foreground italic mt-2">{c.sub}</p>
-            </motion.article>
-          ))}
-        </div>
+        <CeremonySchedule />
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

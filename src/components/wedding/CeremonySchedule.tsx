@@ -38,8 +38,7 @@ const itemAnim = {
 
 const CeremonySchedule = () => {
   return (
-    <section className="px-6 pt-16 pb-4 bg-gradient-blush">
-      <div className="max-w-5xl mx-auto">
+    <>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,8 +87,7 @@ const CeremonySchedule = () => {
             ))}
           </motion.div>
         </motion.div>
-      </div>
-    </section>
+    </>
   );
 };
 
