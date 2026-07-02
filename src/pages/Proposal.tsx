@@ -13,6 +13,11 @@ const Proposal = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       />
+      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+        <p className="neon-gold-float absolute left-1/2 -translate-x-1/2 top-0 text-center text-sm sm:text-base md:text-lg lg:text-xl font-serif-elegant whitespace-nowrap">
+          Save the date 13.09.2026
+        </p>
+      </div>
       <Link
         to="/"
         className="absolute top-5 left-5 z-20 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-amber-950 hover:scale-105 transition-elegant"
