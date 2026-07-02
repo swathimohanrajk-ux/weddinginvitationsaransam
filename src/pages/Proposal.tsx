@@ -4,14 +4,16 @@ import videoAsset from "@/assets/wedding-proposal.mp4.asset.json";
 
 const Proposal = () => {
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-black">
+    <main className="relative w-full min-h-dvh overflow-hidden bg-black">
       <video
         src={videoAsset.url}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        webkit-playsinline="true"
+        preload="auto"
+        className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover object-center"
       />
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         <p className="neon-gold-float absolute left-1/2 -translate-x-1/2 top-0 text-center text-sm sm:text-base md:text-lg lg:text-xl font-serif-elegant">
