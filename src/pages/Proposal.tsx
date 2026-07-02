@@ -13,7 +13,7 @@ const Proposal = () => {
         playsInline
         webkit-playsinline="true"
         preload="auto"
-        className="absolute inset-0 w-full h-full min-w-full min-h-full object-contain object-center md:object-cover"
+        className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover object-center"
       />
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         <p className="neon-gold-float absolute left-1/2 -translate-x-1/2 top-0 text-center text-sm sm:text-base md:text-lg lg:text-xl font-serif-elegant">
