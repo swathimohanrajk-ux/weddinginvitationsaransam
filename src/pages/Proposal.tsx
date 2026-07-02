@@ -14,8 +14,9 @@ const Proposal = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-        <p className="neon-gold-float absolute left-1/2 -translate-x-1/2 top-0 text-center text-sm sm:text-base md:text-lg lg:text-xl font-serif-elegant whitespace-nowrap">
-          Save the date 13.09.2026
+        <p className="neon-gold-float absolute left-1/2 -translate-x-1/2 top-0 text-center text-sm sm:text-base md:text-lg lg:text-xl font-serif-elegant">
+          <span className="block">Save the date</span>
+          <span className="block">13.09.2026</span>
         </p>
       </div>
       <Link
