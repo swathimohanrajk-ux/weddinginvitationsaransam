@@ -284,3 +284,50 @@
   font-weight: 700;
   letter-spacing: 0.02em;
 }
+
+/* Floating golden neon text — drifts downward like a gentle lantern */
+@keyframes float-down {
+  0% {
+    transform: translateY(-12vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(45vh) translateX(14px);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-8px);
+    opacity: 0;
+  }
+}
+@keyframes neon-gold-text-glow {
+  0%, 100% {
+    color: hsl(45 100% 62%);
+    text-shadow:
+      0 0 6px hsl(45 100% 70% / 0.95),
+      0 0 16px hsl(42 100% 60% / 0.85),
+      0 0 28px hsl(38 100% 55% / 0.65),
+      0 0 44px hsl(38 100% 55% / 0.4);
+  }
+  50% {
+    color: hsl(48 100% 80%);
+    text-shadow:
+      0 0 14px hsl(45 100% 80% / 1),
+      0 0 32px hsl(42 100% 70% / 1),
+      0 0 50px hsl(38 100% 60% / 0.95),
+      0 0 72px hsl(38 100% 60% / 0.65);
+  }
+}
+.neon-gold-float {
+  animation: float-down 14s linear infinite, neon-gold-text-glow 2.4s ease-in-out infinite;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
