@@ -3,7 +3,7 @@ import Petals from "@/components/wedding/Petals";
 import Hero from "@/components/wedding/Hero";
 import Countdown from "@/components/wedding/Countdown";
 import Details from "@/components/wedding/Details";
-import Gallery from "@/components/wedding/Gallery";
+
 import RSVP from "@/components/wedding/RSVP";
 import GuestBubble from "@/components/wedding/GuestBubble";
 import GuestWishes from "@/components/wedding/GuestWishes";
@@ -28,7 +28,6 @@ const Index = () => {
         
         <Details />
         <FloralDivider flip />
-        <Gallery />
         <RSVP onSubmitted={() => setRefresh((r) => r + 1)} />
         <Footer />
       </div>
