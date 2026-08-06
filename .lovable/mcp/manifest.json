@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "everlasting-vows",
+      "version": "0.1.0",
+      "title": "Everlasting Vows"
+    },
+    "tools": [
+      {
+        "name": "get_wedding_details",
+        "title": "Get wedding details",
+        "description": "Get the couple's names, wedding date and time, venue with directions link, and the full ceremony schedule.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_guest_wishes",
+        "title": "List guest wishes",
+        "description": "List the public guest wishes posted on the wedding invitation site, newest first.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "default": 20,
+              "description": "How many wishes to return.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "post_guest_wish",
+        "title": "Post a guest wish",
+        "description": "Post a short public wish or blessing for the couple on the wedding invitation site.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "guest_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "description": "Name of the guest posting the wish."
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "description": "The wish message."
+            },
+            "is_anonymous": {
+              "default": false,
+              "description": "When true, the wish is shown as posted by 'Anonymous Guest'.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "guest_name",
+            "message"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "submit_rsvp",
+        "title": "Submit an RSVP",
+        "description": "Submit an RSVP for the wedding with the number of guests attending (1-10).",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "guest_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "description": "Number of guests attending."
+            }
+          },
+          "required": [
+            "guest_count"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_rsvp_summary",
+        "title": "Get RSVP summary",
+        "description": "Get the total number of RSVP submissions and the total guests confirmed so far.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
