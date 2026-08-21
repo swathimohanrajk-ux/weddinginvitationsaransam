@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, MessageCircleHeart, Send, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,80 +13,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-type Wish = {
-  id: string;
-  guest_name: string;
-  message: string;
-  is_anonymous: boolean;
-  created_at: string;
-};
-
-const formatTime = (iso: string) => {
-  const d = new Date(iso);
-  return d.toLocaleString(undefined, {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-  });
-};
-
 const GuestWishes = () => {
   const [open, setOpen] = useState(false);
-  const [wishes, setWishes] = useState<Wish[]>([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [anon, setAnon] = useState(false);
   const [sending, setSending] = useState(false);
   const [sparkle, setSparkle] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [sent, setSent] = useState(false);
   const { toast } = useToast();
   const isMobile = useIsMobile();
-
-  const load = async () => {
-    const { data, error } = await supabase
-      .from("guest_wishes")
-      .select("*")
-      .order("created_at", { ascending: true });
-    if (!error && data) setWishes(data as Wish[]);
-  };
-
-  useEffect(() => {
-    load();
-    const channel = supabase
-      .channel("wishes-realtime")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "guest_wishes" },
-        (payload) => {
-          setWishes((prev) => {
-            const w = payload.new as Wish;
-            if (prev.find((p) => p.id === w.id)) return prev;
-            return [...prev, w];
-          });
-        },
-      )
-      .subscribe();
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
-    const t = setTimeout(() => {
-      const el = scrollRef.current?.querySelector(
-        "[data-radix-scroll-area-viewport]",
-      ) as HTMLElement | null;
-      if (el) el.scrollTop = el.scrollHeight;
-    }, 80);
-    return () => clearTimeout(t);
-  }, [wishes, open]);
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,8 +52,9 @@ const GuestWishes = () => {
       return;
     }
     setMessage("");
-    if (anon) setName("");
+    setName("");
     setSparkle(true);
+    setSent(true);
     setTimeout(() => setSparkle(false), 900);
   };
 
@@ -128,38 +69,38 @@ const GuestWishes = () => {
         </p>
       </SheetHeader>
 
-      <ScrollArea ref={scrollRef} className="flex-1 px-4 py-4">
-        <div className="space-y-3 max-w-md mx-auto">
-          {wishes.length === 0 && (
-            <p className="text-center text-sm italic text-muted-foreground py-10">
-              Be the first to send a wish ✨
-            </p>
+      <div className="flex-1 flex items-center justify-center px-6 text-center">
+        <AnimatePresence mode="wait">
+          {sent ? (
+            <motion.div
+              key="sent"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-3"
+            >
+              <Heart className="h-8 w-8 text-gold mx-auto fill-current" />
+              <p className="font-serif italic text-lg text-foreground/75">
+                Thank you — your wish has been sent to the couple ✨
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Wishes are kept private and shared only with Saran &amp; Samyuktha.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.p
+              key="intro"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="font-serif italic text-base text-muted-foreground max-w-xs"
+            >
+              Write a private blessing below — it will be delivered straight to the couple.
+            </motion.p>
           )}
-          <AnimatePresence initial={false}>
-            {wishes.map((w) => (
-              <motion.div
-                key={w.id}
-                initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-2xl rounded-tl-sm px-4 py-3 bg-card/80 border border-gold/15 shadow-soft backdrop-blur-sm"
-              >
-                <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <p className="font-serif text-sm font-medium text-foreground/85">
-                    {w.is_anonymous ? "Anonymous Guest" : w.guest_name}
-                  </p>
-                  <span className="text-[10px] text-muted-foreground tabular-nums">
-                    {formatTime(w.created_at)}
-                  </span>
-                </div>
-                <p className="text-[15px] leading-relaxed text-foreground/80 italic">
-                  {w.message}
-                </p>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-      </ScrollArea>
+        </AnimatePresence>
+      </div>
 
       <form
         onSubmit={handleSend}
@@ -218,28 +159,24 @@ const GuestWishes = () => {
   );
 
   return (
-    <>
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <Button
-            className="fixed bottom-5 left-5 z-40 rounded-full bg-gradient-gold text-primary-foreground shadow-soft hover:shadow-glow hover:scale-105 transition-elegant px-5 py-6 gap-2"
-          >
-            <MessageCircleHeart className="h-5 w-5" />
-            <span className="hidden sm:inline tracking-wider">Guest Wishes</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent
-          side={isMobile ? "bottom" : "right"}
-          className={
-            isMobile
-              ? "h-[85vh] p-0 rounded-t-3xl border-t border-gold/30"
-              : "w-full sm:max-w-md p-0 border-l border-gold/30"
-          }
-        >
-          {Panel}
-        </SheetContent>
-      </Sheet>
-    </>
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button className="fixed bottom-5 left-5 z-40 rounded-full bg-gradient-gold text-primary-foreground shadow-soft hover:shadow-glow hover:scale-105 transition-elegant px-5 py-6 gap-2">
+          <MessageCircleHeart className="h-5 w-5" />
+          <span className="hidden sm:inline tracking-wider">Guest Wishes</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent
+        side={isMobile ? "bottom" : "right"}
+        className={
+          isMobile
+            ? "h-[85vh] p-0 rounded-t-3xl border-t border-gold/30"
+            : "w-full sm:max-w-md p-0 border-l border-gold/30"
+        }
+      >
+        {Panel}
+      </SheetContent>
+    </Sheet>
   );
 };
 
