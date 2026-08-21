@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer className="py-16 px-6 text-center bg-gradient-elegant">
@@ -12,6 +13,12 @@ const Footer = () => (
     <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mt-8">
       Suguna Auditorium · Sitra · September 12
     </p>
+    <Link
+      to="/admin/login"
+      className="inline-block mt-6 text-[10px] tracking-[0.4em] uppercase text-muted-foreground/70 hover:text-gold transition-elegant"
+    >
+      Admin
+    </Link>
   </footer>
 );
 
